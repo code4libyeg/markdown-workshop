@@ -1,0 +1,19 @@
+
+div.box {
+	width: 550px;
+	border: 1px solid black;
+	padding: 20px;
+	margin: 20px auto;
+	font-family: Courier, monospace;
+	font-size: 1.5em;
+}
+
+div.box p {
+	text-indent: 0;
+	margin-bottom: 10px;
+}
+
+div.box em {
+	font-style: normal;
+	text-decoration: underline;
+}

@@ -258,7 +258,18 @@ end</code></pre>
 </section>
 <section id="special-markup-in-html-and-pdf" class="slide level2">
 <h1>Special Markup in HTML and PDF</h1>
-<p>TODO copy from union catalog to demo library card layout</p>
+<pre><code>&lt;div class=&quot;box&quot; markdown=&quot;1&quot;&gt;
+
+Brown, John, 1852-1900  
+\ \ \ The management of institutions,  
+\ \ \ ed. by Thomas Jones, and rev. by  
+\ \ \ Henry Hill......NY.,  
+\ \ \ Brown - 1938  
+\ \ \ \ \ \ 440 p. 
+
+&lt;/div&gt;</code></pre>
+<pre><code>./preprocess.rb catalog.md | pandoc -o slides/preprocessed-catalog.pdf</code></pre>
+<p>Output: <a href="catalog.html">HTML</a> ~ <a href="catalog.pdf">PDF</a> ~ <a href="preprocessed-catalog.pdf">preprocessed PDF</a></p>
 </section>
 <section id="epub" class="slide level2">
 <h1>ePub</h1>

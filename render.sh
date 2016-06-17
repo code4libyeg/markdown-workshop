@@ -2,9 +2,15 @@
 pandoc -o slides/slides.html -t revealjs -s slides.md
 pandoc -o slides/slides.pdf -s slides.md
 
-# latex example
+# embedded markup example
 pandoc -o slides/embedded.html -s embedded.md
 pandoc -o slides/embedded.pdf -s embedded.md
+
+# catalog card example
+pandoc -o slides/catalog.html -s catalog.md
+pandoc -o slides/catalog.pdf -s catalog.md
+./preprocess.rb catalog.md | pandoc -o slides/preprocessed-catalog.pdf
+cp catalog.css slides/
 
 # bibliography example
 pandoc --filter pandoc-citeproc -o slides/mappamundi/mappamundi.html -s mappamundi.md
