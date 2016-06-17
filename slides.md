@@ -145,10 +145,6 @@ css: css/myslides.css
 - extensions: MultiMarkdown etc.
 - notably: GitHub
 
-## Embedding Other Markup
-
-TODO Show embedding of HTML
-
 ## Part 2: Pandoc
 
 - open-source Haskell application and library for converting markup
@@ -163,17 +159,27 @@ Reads (partial): Textile, reStructuredText, HTML, LaTeX, MediaWiki markup, TWiki
 
 Writes: plain text, PDF (if it has LaTeX support), Markdown, CommonMark, PHP Markdown Extra, GitHub-Flavored Markdown, reStructuredText, XHTML, HTML5, LaTeX (including beamer slide shows), ConTeXt, RTF, OPML, DocBook, OpenDocument, ODT, Word docx, GNU Texinfo, MediaWiki markup, DokuWiki markup, Haddock markup, EPUB (v2 or v3), FictionBook2, Textile, groff man pages, Emacs Org mode, AsciiDoc, InDesign ICML, TEI Simple, and Slidy, Slideous, DZSlides, reveal.js or S5 HTML slide shows
 
-## PDF and LaTeX
+## Generating a PDF
 
-Just as you can embed HTML tags, so you can embed LaTeX tags:
+```pandoc -o slides/slides.pdf -s slides.md```
+
+[PDF of these slides](slides/slides.pdf)
+
+## Embedding Markup
+
+HTML tags for the HTML god, LaTeX markup unto the PDF generator
 
 ```
+<p style="text-align: right">
+Some right-aligned text in embedded HTML.
+</p>
+
 \begin{flushright}
 Some right-aligned text in embedded LaTeX.
 \end{flushright}
 ```
 
-Sample: [Markdown](latex.md) ~ [PDF](latex.pdf)
+Sample: [HTML](embedded.html) ~ [PDF](embedded.pdf)
 
 ## Filters
 

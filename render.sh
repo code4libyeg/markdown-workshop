@@ -1,14 +1,14 @@
 #!/bin/sh
 pandoc -o slides/slides.html -t revealjs -s slides.md
+pandoc -o slides/slides.pdf -s slides.md
 
 # latex example
-pandoc -o slides/latex.pdf -s latex.md
-cp latex.md slides/
+pandoc -o slides/embedded.html -s embedded.md
+pandoc -o slides/embedded.pdf -s embedded.md
 
 # bibliography example
 pandoc --filter pandoc-citeproc -o slides/mappamundi/mappamundi.html -s mappamundi.md
 pandoc --filter pandoc-citeproc -o slides/mappamundi/mappamundi.pdf -s mappamundi.md
-cp mappamundi* slides/mappamundi/
 
 # filter example
 pandoc --filter italics2bold.rb -o slides/filter/filtered.html -s ast.md
