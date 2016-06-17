@@ -2,7 +2,6 @@
 title: Markdown and Pandoc
 author: Peter Binkley
 date: 16 June 2016
-bork: borkitude
 ---
 
 ## Part 1: Markdown
@@ -21,7 +20,7 @@ bork: borkitude
 - rendering: [Pandoc](http://pandoc.org/installing.html):
 
 ```
-pandoc -o test.html -s test.md
+pandoc -s test.md -o test.html
 ```
 
 ## Ingredients
@@ -161,9 +160,11 @@ Writes: plain text, PDF (if it has LaTeX support), Markdown, CommonMark, PHP Mar
 
 ## Generating a PDF
 
-```pandoc -o slides/slides.pdf -s slides.md```
+```
+pandoc -s slides.md -o slides/slides.pdf
+```
 
-[PDF of these slides](slides/slides.pdf)
+[PDF of these slides](slides.pdf)
 
 ## Embedding Markup
 
@@ -228,7 +229,7 @@ $endif$
 ```
 
 ```
-pandoc -o slides/custom.pdf --template=custom.latex custom.m
+pandoc --template=custom.latex custom.md -o slides/custom.pdf
 ```
 
 Output: [PDF](slides/custom.pdf)
@@ -252,7 +253,7 @@ Brown, John, 1852-1900
 ./preprocess.rb catalog.md | pandoc -o slides/preprocessed-catalog.pdf
 ```
 
-Output: [HTML](catalog.html) ~ [PDF](catalog.pdf) ~ [preprocessed PDF](preprocessed-catalog.pdf)
+Output: [HTML](catalog.html) ~ [PDF](catalog.pdf) ~ [preprocessed PDF](preprocessed-catalog.pdf) 
 
 ## ePub
 
