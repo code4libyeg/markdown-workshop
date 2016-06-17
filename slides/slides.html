@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Peter Binkley" />
-  <meta name="dcterms.date" content="2016-06-16" />
+  <meta name="dcterms.date" content="2016-06-17" />
   <title>Markdown and Pandoc</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -33,9 +33,14 @@
 <section>
     <h1 class="title">Markdown and Pandoc</h1>
     <h2 class="author">Peter Binkley</h2>
-    <h3 class="date">16 June 2016</h3>
+    <h3 class="date">17 June 2016</h3>
 </section>
 
+<section id="this-demo" class="slide level2">
+<h1>This demo</h1>
+<p>... is on github: <a href="https://github.com/code4libyeg/markdown-workshop">code4libyeg/markdown-workshop</a></p>
+<p>(Clone it or download the zip)</p>
+</section>
 <section id="part-1-markdown" class="slide level2">
 <h1>Part 1: Markdown</h1>
 </section>
@@ -55,7 +60,7 @@
 <li>edit: any text editor; <a href="https://atom.io/">Atom</a> or <a href="https://www.sublimetext.com/">Sublime Text</a> are examples of Markdown-aware editor</li>
 <li>rendering: <a href="http://pandoc.org/installing.html">Pandoc</a>:</li>
 </ul>
-<pre><code>pandoc -o test.html -s test.md</code></pre>
+<pre><code>pandoc -s test.md -o test.html</code></pre>
 </section>
 <section id="ingredients" class="slide level2">
 <h1>Ingredients</h1>
@@ -203,6 +208,11 @@ css: css/myslides.css
 <li>notably: GitHub</li>
 </ul>
 </section>
+<section id="my-learning-project" class="slide level2">
+<h1>My learning project</h1>
+<p><a href="https://github.com/pbinkley/jekyll-book">jekyll-book</a></p>
+<p>A platform for publishing books using jekyll, with html pages and pdf (etc.) downloads</p>
+</section>
 <section id="part-2-pandoc" class="slide level2">
 <h1>Part 2: Pandoc</h1>
 <ul>
@@ -219,7 +229,7 @@ css: css/myslides.css
 </section>
 <section id="generating-a-pdf" class="slide level2">
 <h1>Generating a PDF</h1>
-<p><code>pandoc -o slides/slides.pdf -s slides.md</code></p>
+<pre><code>pandoc -s slides.md -o slides/slides.pdf</code></pre>
 <p><a href="slides.pdf">PDF of these slides</a></p>
 </section>
 <section id="embedding-markup" class="slide level2">
@@ -265,7 +275,7 @@ end</code></pre>
 $dedication$
 \end{center}
 $endif$</code></pre>
-<pre><code>pandoc -o slides/custom.pdf --template=custom.latex custom.m</code></pre>
+<pre><code>pandoc --template=custom.latex custom.md -o slides/custom.pdf</code></pre>
 <p>Output: <a href="slides/custom.pdf">PDF</a></p>
 </section>
 <section id="special-markup-in-html-and-pdf" class="slide level2">

@@ -1,8 +1,14 @@
 ---
 title: Markdown and Pandoc
 author: Peter Binkley
-date: 16 June 2016
+date: 17 June 2016
 ---
+
+## This demo
+
+... is on github: [code4libyeg/markdown-workshop](https://github.com/code4libyeg/markdown-workshop)
+
+(Clone it or download the zip)
 
 ## Part 1: Markdown
 
@@ -143,6 +149,12 @@ css: css/myslides.css
 - in the last few years, an effort toward standardization; IETF draft for text/markdown media type
 - extensions: MultiMarkdown etc.
 - notably: GitHub
+
+## My learning project
+
+[jekyll-book](https://github.com/pbinkley/jekyll-book)
+
+A platform for publishing books using jekyll, with html pages and pdf (etc.) downloads
 
 ## Part 2: Pandoc
 
