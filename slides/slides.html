@@ -256,6 +256,18 @@ end</code></pre>
 <li>Output: <a href="filter/unfiltered.html">unfiltered</a> ~ <a href="filter/filtered.html">filtered</a></li>
 </ul>
 </section>
+<section id="changing-the-template" class="slide level2">
+<h1>Changing the Template</h1>
+<p>Dump the default template:</p>
+<pre><code>pandoc -D latex &gt; template.latex</code></pre>
+<pre><code>$if(dedication)$
+\begin{center}
+$dedication$
+\end{center}
+$endif$</code></pre>
+<pre><code>pandoc -o slides/custom.pdf --template=custom.latex custom.m</code></pre>
+<p>Output: <a href="slides/custom.pdf">PDF</a></p>
+</section>
 <section id="special-markup-in-html-and-pdf" class="slide level2">
 <h1>Special Markup in HTML and PDF</h1>
 <pre><code>&lt;div class=&quot;box&quot; markdown=&quot;1&quot;&gt;

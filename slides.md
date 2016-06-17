@@ -210,6 +210,29 @@ end
 
 - Output: [unfiltered](filter/unfiltered.html) ~ [filtered](filter/filtered.html)
 
+
+## Changing the Template
+
+Dump the default template:
+
+```
+pandoc -D latex > template.latex
+```
+
+```
+$if(dedication)$
+\begin{center}
+$dedication$
+\end{center}
+$endif$
+```
+
+```
+pandoc -o slides/custom.pdf --template=custom.latex custom.m
+```
+
+Output: [PDF](slides/custom.pdf)
+
 ## Special Markup in HTML and PDF
 
 ```

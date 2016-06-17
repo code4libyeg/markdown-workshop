@@ -19,3 +19,6 @@ pandoc --filter pandoc-citeproc -o slides/mappamundi/mappamundi.pdf -s mappamund
 # filter example
 pandoc --filter italics2bold.rb -o slides/filter/filtered.html -s ast.md
 pandoc -o slides/filter/unfiltered.html -s ast.md
+
+# custom template example
+ pandoc -o slides/custom.pdf --template=custom.latex custom.md
