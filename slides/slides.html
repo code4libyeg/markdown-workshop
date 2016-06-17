@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Peter Binkley" />
+  <meta name="dcterms.date" content="2016-06-16" />
+  <title>Markdown and Pandoc</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Markdown and Pandoc</h1>
+    <h2 class="author">Peter Binkley</h2>
+    <h3 class="date">16 June 2016</h3>
+</section>
+
+<section id="part-1-markdown" class="slide level2">
+<h1>Part 1: Markdown</h1>
+</section>
+<section id="spirit-of-markdown" class="slide level2">
+<h1>Spirit of Markdown</h1>
+<ul>
+<li>John Gruber, 2004, with collaboration of Aaron Swartz</li>
+<li>inspired by ascii email format</li>
+<li>markup does not interfere with the readability of the text</li>
+<li>comprehensible without documentation</li>
+<li><a href="http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown">sustainable</a></li>
+</ul>
+</section>
+<section id="tools" class="slide level2">
+<h1>Tools</h1>
+<ul>
+<li>edit: any text editor; <a href="https://atom.io/">Atom</a> or <a href="https://www.sublimetext.com/">Sublime Text</a> are examples of Markdown-aware editor</li>
+<li>rendering: <a href="http://pandoc.org/installing.html">Pandoc</a>:</li>
+</ul>
+<pre><code>pandoc -o test.html -s test.md</code></pre>
+</section>
+<section id="ingredients" class="slide level2">
+<h1>Ingredients</h1>
+<ul>
+<li>punctuation marks: - = &gt; * + - \ [] () _ ` !</li>
+<li>blocks, separated by blank lines</li>
+<li><p>indents</p></li>
+<li><p>John Gruber's <a href="https://daringfireball.net/projects/markdown/syntax">Syntax Guide</a></p></li>
+</ul>
+</section>
+<section id="basics" class="slide level2">
+<h1>Basics</h1>
+<ul>
+<li>Paragraphs: separated by blank lines</li>
+<li><code>*italics*</code>: <em>italics</em></li>
+<li><code>**bold**</code>: <strong>bold</strong></li>
+</ul>
+<pre><code>- bullet 1
+- bullet 2</code></pre>
+<pre><code>## Heading</code></pre>
+</section>
+<section id="links" class="slide level2">
+<h1>Links</h1>
+<h3 id="link">Link</h3>
+<p><code>[Anchor](http://www.example.com)</code>: <a href="http://www.example.com">Anchor</a></p>
+<h3 id="image">Image</h3>
+<p><code>![Alt text](https://upload.wikimedia.org/wikipedia/commons/0/00/Escribano.jpg)</code>: <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Escribano.jpg" alt="Alt text" /></p>
+</section>
+<section id="indents" class="slide level2">
+<h1>Indents</h1>
+<p>Blockquote: use &gt;</p>
+<blockquote>
+<p>Block quote this is a block quote this is a block quote Block quote this is a block quote this is a block quote Block quote this is a block quote this is a block quote</p>
+</blockquote>
+<p>Code block: use tab (or four spaces)</p>
+<pre><code>Code this is code
+And this is code
+So is this</code></pre>
+</section>
+<section id="advanced-tables" class="slide level2">
+<h1>Advanced: Tables</h1>
+<ul>
+<li>not part of classic Markdown</li>
+<li>Pandoc supports <a href="http://pandoc.org/README.html#tables">four syntaxes</a></li>
+</ul>
+</section>
+<section id="simple-tables" class="slide level2">
+<h1>Simple Tables</h1>
+<pre><code>  Right     Left     Center     Default
+-------     ------ ----------   -------
+     12     12        12            12
+    123     123       123          123
+
+Table:  Demonstration of simple table syntax.</code></pre>
+<table>
+<caption>Demonstration of simple table syntax.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Right</th>
+<th style="text-align: left;">Left</th>
+<th style="text-align: center;">Center</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">123</td>
+<td style="text-align: left;">123</td>
+<td style="text-align: center;">123</td>
+<td style="text-align: left;">123</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="multiline-tables" class="slide level2">
+<h1>Multiline Tables</h1>
+<pre><code>-------------------------------------------------------------
+ Centered   Default           Right Left
+  Header    Aligned         Aligned Aligned
+----------- ------- --------------- -------------------------
+   First    row                12.0 Example of a row that
+                                    spans multiple lines.
+
+  Second    row                 5.0 Here&#39;s another one. Note
+                                    the blank line between
+                                    rows.
+-------------------------------------------------------------
+
+Table: Here&#39;s the caption. It, too, may span
+multiple lines.</code></pre>
+</section>
+<section id="rendered" class="slide level2">
+<h1>(rendered)</h1>
+<table>
+<caption>Here's the caption. It, too, may span multiple lines.</caption>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 11%" />
+<col style="width: 22%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Centered Header</th>
+<th style="text-align: left;">Default Aligned</th>
+<th style="text-align: right;">Right Aligned</th>
+<th style="text-align: left;">Left Aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">First</td>
+<td style="text-align: left;">row</td>
+<td style="text-align: right;">12.0</td>
+<td style="text-align: left;">Example of a row that spans multiple lines.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Second</td>
+<td style="text-align: left;">row</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: left;">Here's another one. Note the blank line between rows.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="metadata-yaml-block" class="slide level2">
+<h1>Metadata: YAML Block</h1>
+<pre><code>---
+title: Markdown and Pandoc
+css: css/myslides.css
+---</code></pre>
+</section>
+<section id="flavours" class="slide level2">
+<h1>Flavours</h1>
+<ul>
+<li>no one standard, many flavours</li>
+<li>in the last few years, an effort toward standardization; IETF draft for text/markdown media type</li>
+<li>extensions: MultiMarkdown etc.</li>
+<li>notably: GitHub</li>
+</ul>
+</section>
+<section id="embedding-other-markup" class="slide level2">
+<h1>Embedding Other Markup</h1>
+<p>TODO Show embedding of HTML</p>
+</section>
+<section id="part-2-pandoc" class="slide level2">
+<h1>Part 2: Pandoc</h1>
+<ul>
+<li>open-source Haskell application and library for converting markup</li>
+<li>begun 2006 by John MacFarlane (philosopher at UC Berkeley)</li>
+<li>handles &quot;standard&quot; Markdown and provides many extensions</li>
+</ul>
+</section>
+<section id="formats" class="slide level2">
+<h1>Formats</h1>
+<p>Reads (full): Markdown, CommonMark, PHP Markdown Extra, GitHub-Flavored Markdown,</p>
+<p>Reads (partial): Textile, reStructuredText, HTML, LaTeX, MediaWiki markup, TWiki markup, Haddock markup, OPML, Emacs Org mode, DocBook, txt2tags, EPUB, ODT and Word docx</p>
+<p>Writes: plain text, PDF (if it has LaTeX support), Markdown, CommonMark, PHP Markdown Extra, GitHub-Flavored Markdown, reStructuredText, XHTML, HTML5, LaTeX (including beamer slide shows), ConTeXt, RTF, OPML, DocBook, OpenDocument, ODT, Word docx, GNU Texinfo, MediaWiki markup, DokuWiki markup, Haddock markup, EPUB (v2 or v3), FictionBook2, Textile, groff man pages, Emacs Org mode, AsciiDoc, InDesign ICML, TEI Simple, and Slidy, Slideous, DZSlides, reveal.js or S5 HTML slide shows</p>
+</section>
+<section id="pdf-and-latex" class="slide level2">
+<h1>PDF and LaTeX</h1>
+<p>Just as you can embed HTML tags, so you can embed LaTeX tags:</p>
+<pre><code>\begin{flushright}
+Some right-aligned text in embedded LaTeX.
+\end{flushright}</code></pre>
+<p>Sample: <a href="latex.md">Markdown</a> ~ <a href="latex.pdf">PDF</a></p>
+</section>
+<section id="filters" class="slide level2">
+<h1>Filters</h1>
+<p>Filters can manipulate Pandoc's &quot;abstract syntax tree&quot; (AST) between the parsing of the input and the rendering of the output.</p>
+<p>Inspect AST: <code>pandoc -t native ast.md</code></p>
+<pre><code>Some *italic* text.</code></pre>
+<pre><code>[Para [Str &quot;Some&quot;,Space,Emph [Str &quot;italic&quot;],Space,Str &quot;text.&quot;]]</code></pre>
+</section>
+<section id="example-filter-in-ruby" class="slide level2">
+<h1>Example Filter in Ruby</h1>
+<ul>
+<li>use <a href="https://github.com/karaken12/pandoc-filters-ruby">pandoc-filter</a> gem</li>
+<li>install: <code>gem install pandoc-filter</code></li>
+</ul>
+<pre><code>PandocFilter.filter do |type, value, format, meta|
+  if type == &#39;Emph&#39;
+    PandocElement.Strong(value)
+  end
+end</code></pre>
+<ul>
+<li>Output: <a href="filter/unfiltered.html">unfiltered</a> ~ <a href="filter/filtered.html">filtered</a></li>
+</ul>
+</section>
+<section id="special-markup-in-html-and-pdf" class="slide level2">
+<h1>Special Markup in HTML and PDF</h1>
+<p>TODO copy from union catalog to demo library card layout</p>
+</section>
+<section id="bibliography" class="slide level2">
+<h1>Bibliography</h1>
+<p>Pandoc provides the citations extension and the pandoc-citeproc filter to generate citations and a bibliography. (<a href="http://pandoc.org/README.html#citations">Manual</a>)</p>
+<p>It uses <a href="https://github.com/citation-style-language/styles">CSL styles</a></p>
+<p>Sample: <a href="mappamundi/mappamundi.md">Markdown</a> ~ <a href="mappamundi/mappamundi.bib">BibTex</a> ~ <a href="mappamundi/mappamundi.html">HTML</a> ~ <a href="mappamundi/mappamundi.pdf">PDF</a></p>
+<p>Try another CSL: uncomment <code>#csl: apa.csl</code> in YAML</p>
+</section>
+<section id="scholarly-markdown" class="slide level2">
+<h1>Scholarly Markdown?</h1>
+<ul>
+<li>an initiative from the sciences (originally Markdown for Science)</li>
+<li>adds better support for inline math, figures, etc.</li>
+<li>implemented in a fork of Pandoc</li>
+<li>See <a href="http://scholarlymarkdown.com/">scholarlymarkdown.com</a> (Tim T.Y. Lin)</li>
+<li><a href="http://scholarlymarkdown.com/Scholarly-Markdown-Guide.html">Syntax</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    </body>
+</html>
